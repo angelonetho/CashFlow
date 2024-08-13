@@ -26,7 +26,7 @@ public class RegisterExpenseValidatorTests
     [InlineData("")]
     [InlineData("         ")]
     [InlineData(null)]
-    public void ErrorTitleEmpty(string title)
+    public void Error_Title_Empty(string title)
     {
         // Arrange
         var validator = new RegisterExpenseValidator();
@@ -42,7 +42,7 @@ public class RegisterExpenseValidatorTests
     }
     
     [Fact]
-    public void ErrorDateFuture()
+    public void Error_Date_Future()
     {
         // Arrange
         var validator = new RegisterExpenseValidator();
@@ -58,7 +58,7 @@ public class RegisterExpenseValidatorTests
     }
     
     [Fact]
-    public void ErrorPaymentTypeInvalid()
+    public void Error_Payment_Type_Invalid()
     {
         // Arrange
         var validator = new RegisterExpenseValidator();
@@ -77,7 +77,7 @@ public class RegisterExpenseValidatorTests
     [InlineData(0)]
     [InlineData(-1)]
     [InlineData(-999)]
-    public void ErrorAmountInvalid(decimal amount)
+    public void Error_Amount_Invalid(decimal amount)
     {
         // Arrange
         var validator = new RegisterExpenseValidator();
