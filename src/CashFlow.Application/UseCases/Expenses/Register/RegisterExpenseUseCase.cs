@@ -12,7 +12,7 @@ public class RegisterExpenseUseCase
     {
         Validate(request);
         
-        var dbContext = new CashFlowDbContext();
+
         
         var entity = new Expense
         {
@@ -22,10 +22,7 @@ public class RegisterExpenseUseCase
             Title = request.Title,
             PaymentType = (Domain.Enums.PaymentType)request.PaymentType,
         };
-
-        dbContext.Expenses.Add(entity);
         
-        dbContext.SaveChanges();
         
         return new ResponseRegisteredExpenseJson();
     }
